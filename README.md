@@ -1,81 +1,11 @@
-Weight Load Classification System
+I made this program to check how energy is being used in different buildings. The idea is simple, we take some energy readings and see whether the usage is low, normal, or too high. Based on that, I grouped the readings into efficient, moderate, high, and invalid.
 
-Project Description
-This Python program classifies weight entries into different load categories and modifies the final plan based on a calculated Plan Load Index derived from the user’s name.
+To do this, I first took the input values from the user using a loop and stored them in a list. Then I went through each value one by one and used conditions to decide where it belongs. I used a dictionary to keep all these categories so it’s easy to track. After that, I removed the invalid values and calculated the total energy usage. I also used a tuple just to store some summary values.
 
-Program Logic
+Then I checked a few conditions like whether there are too many high readings, whether the usage looks balanced, or if the total consumption is too much. Based on these, the program prints the final result along with all the categorized readings.
 
-Step 1 Name Analysis
-The user enters a full name.
-Spaces are ignored while counting characters.
-Total characters are stored as L.
-Plan Load Index is calculated using the formula:
+I also added a small personalization where the program runs only if the last digit of my register number is even. If it’s odd, the program just stops.
 
-PLI equals L modulus 3.
+I tried the program with different types of inputs like normal values, high values, and even invalid ones to make sure it works in all cases.
 
-Step 2 Weight Classification
-The user enters weights separated by spaces.
-Each weight is classified as follows:
-
-If weight is less than zero it is treated as an invalid entry.
-If weight is between 0 and 5 it is Very Light.
-If weight is between 6 and 25 it is Normal Load.
-If weight is between 26 and 60 it is Heavy Load.
-If weight is greater than 60 it is Overload.
-
-Step 3 Plan Modification Rules
-
-If PLI equals 0
-All overload weights are moved to invalid entries.
-
-If PLI equals 1
-All very light weights are removed from the plan.
-
-If PLI equals 2
-Both very light and overload weights are removed.
-
-The number of affected entries is calculated.
-
-Program Output
-
-The program displays
-Final category lists
-Invalid entries
-Valid weight count
-Affected entries count
-Calculated L value
-Calculated PLI value
-
-How to Run the Program
-
-Install Python version 3 or above.
-Save the program file as day5.py.
-Open terminal or command prompt.
-Run the command:
-
-python day5.py
-
-Enter the full name and weights when prompted.
-
-Example Input
-
-Full name Rahul Kumar
-Weights 2 10 45 70 minus 5
-
-Technologies Used
-
-Python 3
-Loops
-Conditional statements
-Lists
-String handling
-
-Repository Structure
-
-day5.py
-README.md
-
-Purpose of the Project
-
-This project is created for academic learning.
-It demonstrates input processing, data classification, and conditional plan modification using Python.
+From this, I got a better idea of how to use loops and conditions properly and how to handle data in a structured way instead of just writing random code.
